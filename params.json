@@ -1,6 +1,6 @@
 {
   "name": "Jeff Buenting's GitHub Home",
   "tagline": "",
-  "body": "### Welcome to my GitHub Home.\r\nI am learning Github and found that you can host User / project pages.  So I thought I would try them out.\r\n\r\nI will be using Github for my Powershell scripts, functions and modules.  \r\n\r\nBear with me as I will be adding more information as I have it.\r\n\r\nLinks to my Powershell Projects\r\n\r\n[ActiveXpert Network Monitor](http://jeffbuenting.github.io/ActiveXperts_Network_Monitor_PowershellModule)\r\n",
+  "body": "### Welcome to my GitHub Home.\r\nI am learning Github and found that you can host User / project pages.  So I thought I would try them out.\r\n\r\nI will be using Github for my Powershell scripts, functions and modules.  \r\n\r\nBear with me as I will be adding more information as I have it.\r\n\r\n## Links to my Powershell Projects\r\n\r\n[ActiveXpert Network Monitor](http://jeffbuenting.github.io/ActiveXperts_Network_Monitor_PowershellModule)\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
