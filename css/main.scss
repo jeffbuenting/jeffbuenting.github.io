@@ -29,7 +29,16 @@ $on-palm:          600px;
 $on-laptop:        800px;
 
 #leftcolumn { width: 300px; border: 1px solid red; float: left};
-#my-github-projects { width: 500px; border: 1px solid red; float: right};
+
+// working to get new title to div via css
+
+#my-github-projects { 
+	width: 500px; 
+	border: 1px solid red; 
+	float: right;
+	p:first-child { font-weight: Bold;};
+}
+
 
 // Use media queries like this:
 // @include media-query($on-palm) {

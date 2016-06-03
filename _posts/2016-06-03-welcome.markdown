@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Welcome to my Blog!"
+date:   2016-06-03 2:37:06 -0400
+categories: Blog
+---
+Welcome to my Blog!
+
+This is my personal GitHub site mainly setup as a place to store my usefull powwershell snipets and scripts.  But also as a way to share what I learn.  Ok basically a place for me to store things I don't what to forget.  But I hear it is usefull.
+
+So Enjoy and let me know what you think
+
+Jeff
