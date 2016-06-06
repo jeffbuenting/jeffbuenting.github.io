@@ -8,6 +8,20 @@ categories: SQL
 
 Temporary Table created to hold a set of data.  Automatically cleaned up at end of query.
 
+### Example ###
+
+Creates the Table adds data and displays all the data
+
+{% highlight ruby %}
+USE [MyDB]
+
+DECLARE @SourcesToDelete TABLE (Name VARCHAR(512) )
+INSERT INTO @SourcesToDelete VALUES ('WhatsUp')
+INSERT INTO @SourcesToDelete VALUES ('GoAway')
+
+select * from @SourcesToDelete
+{% endhighlight %}
+
 ### Resources ###
 * https://msdn.microsoft.com/en-us/library/ms175010.aspx   
    * https://msdn.microsoft.com/en-us/library/ms188927.aspx   
