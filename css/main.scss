@@ -28,9 +28,18 @@ $content-width:    1000px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+#leftcolumn-Title {
+	margin: auto 
+};
+
 #leftcolumn { width: 300px; border: 1px solid red; float: left};
 
 // working to get new title to div via css
+
+#My-Github-Projects-Title {
+	width: 500px; 
+	float: right;
+}
 
 #my-github-projects { 
 	width: 500px; 
