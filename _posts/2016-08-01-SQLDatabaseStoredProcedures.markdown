@@ -38,7 +38,9 @@ ON modu.object_id = obj.object_id
 WHERE obj.type = 'P' 
 
 ORDER BY SPName
-{% endhighlight %}
+{% endhighlight %}  
+
+
 
 http://www.sqlservercurry.com/2009/03/list-all-stored-procedures-of-database.html
 
