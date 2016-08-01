@@ -40,6 +40,8 @@ WHERE obj.type = 'P'
 ORDER BY SPName
 {% endhighlight %}
 
+http://www.sqlservercurry.com/2009/03/list-all-stored-procedures-of-database.html
+
 Enjoy
 
 Jeff
