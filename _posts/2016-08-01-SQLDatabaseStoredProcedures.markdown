@@ -18,6 +18,28 @@ Without further ado, this is where you can find a databases stored procedures.
 
 And there you go, a list of stored procedures stored in the database.
 
+Or Run this SQL Script
+
+{% highlight ruby %} 
+USE CommunityHealthCharities_MSCRM
+
+SELECT obj.Name as SPName, 
+
+modu.definition as SPDefinition, 
+
+obj.create_date as SPCreationDate
+
+FROM sys.sql_modules modu 
+
+INNER JOIN sys.objects obj 
+
+ON modu.object_id = obj.object_id 
+
+WHERE obj.type = 'P' 
+
+ORDER BY SPName
+{% endhighlight %}
+
 Enjoy
 
 Jeff
