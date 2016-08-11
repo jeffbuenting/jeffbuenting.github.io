@@ -21,7 +21,7 @@ And there you go, a list of stored procedures stored in the database.
 Or Run this SQL Script
 
 {% highlight ruby %} 
-USE CommunityHealthCharities_MSCRM
+USE Database_MSCRM
 
 SELECT obj.Name as SPName, 
 
