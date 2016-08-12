@@ -21,7 +21,7 @@ c1:[Type == "http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"]
 => issue(store = "_PasswordExpiryStore", types = ("http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime", "http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays", "http://schemas.microsoft.com/ws/2012/01/passwordchangeurl"), query = "{0};", param = c1.Value);
 {% endhighlight %} 
 
-![ADFS Password Expiry Claim Rule](https://github.com/jeffbuenting/jeffbuenting.github.io/tree/master/Images/ADFSPasswordExpiryClaimRule.PNG)
+![ADFS Password Expiry Claim Rule](https://github.com/jeffbuenting/jeffbuenting.github.io/blob/master/Images/ADFSPasswordExpiryClaimRule.PNG)
 
 That is all there is to it.  Alot simpler than one would imagine.
 
