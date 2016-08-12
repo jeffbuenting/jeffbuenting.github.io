@@ -12,7 +12,7 @@ ADFS 3.0 to the rescue.  This version allows you to change your password and sen
 
 First, you need to enable ADFS password updating endpoint.
 
-![ADFS Enable Password Update Endpoint](http://http://jeffbuenting.github.io/images/ADFSEnableUpdatePassword.PNG)
+![ADFS Enable Password Update Endpoint](http://jeffbuenting.github.io/images/ADFSEnableUpdatePassword.PNG)
 
 Second, add a new claim rule to your relying party trust.
 
@@ -21,7 +21,7 @@ c1:[Type == "http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"]
 => issue(store = "_PasswordExpiryStore", types = ("http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime", "http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays", "http://schemas.microsoft.com/ws/2012/01/passwordchangeurl"), query = "{0};", param = c1.Value);
 {% endhighlight %} 
 
-![ADFS Password Expiry Claim Rule](http://http://jeffbuenting.github.io/images/ADFSPasswordExpiryClaimRule.PNG)
+![ADFS Password Expiry Claim Rule](http://jeffbuenting.github.io/images/ADFSPasswordExpiryClaimRule.PNG)
 
 That is all there is to it.  Alot simpler than one would imagine.
 
@@ -30,6 +30,6 @@ Enjoy
 Jeff
 
 #### External Resources: ####    
-https://technet.microsoft.com/en-us/library/dn864829(v=ws.11).aspx
+<https://technet.microsoft.com/en-us/library/dn864829(v=ws.11).aspx>
 
-https://blogs.msdn.microsoft.com/samueld/2015/05/13/adfs-2012-r2-now-supports-password-change-not-reset-across-all-devices/
+<https://blogs.msdn.microsoft.com/samueld/2015/05/13/adfs-2012-r2-now-supports-password-change-not-reset-across-all-devices/>
