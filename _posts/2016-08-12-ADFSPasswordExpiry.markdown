@@ -12,7 +12,7 @@ ADFS 3.0 to the rescue.  This version allows you to change your password and sen
 
 First, you need to enable ADFS password updating endpoint.
 
-![ADFS Enable Password Update Endpoint](https://github.com/jeffbuenting/jeffbuenting.github.io/Images/ADFSEnableUpdatePassword.PNG)
+![ADFS Enable Password Update Endpoint](https://github.com/jeffbuenting/jeffbuenting.github.io/blob/master/Images/ADFSEnableUpdatePassword.PNG)
 
 Second, add a new claim rule to your relying party trust.
 
@@ -21,7 +21,7 @@ c1:[Type == "http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"]
 => issue(store = "_PasswordExpiryStore", types = ("http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime", "http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays", "http://schemas.microsoft.com/ws/2012/01/passwordchangeurl"), query = "{0};", param = c1.Value);
 {% endhighlight %} 
 
-![ADFS Password Expiry Claim Rule](https://github.com/jeffbuenting/jeffbuenting.github.io/Images/ADFSPasswordExpiryClaimRule.PNG)
+![ADFS Password Expiry Claim Rule](https://github.com/jeffbuenting/jeffbuenting.github.io/tree/master/Images/ADFSPasswordExpiryClaimRule.PNG)
 
 That is all there is to it.  Alot simpler than one would imagine.
 
