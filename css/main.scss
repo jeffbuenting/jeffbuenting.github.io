@@ -40,6 +40,21 @@ $on-laptop:        800px;
 
 // working to get new title to div via css
 
+#Articles-Title {
+	position: absolute;
+	top: 135px;
+	right: 485px;
+	width: 500px; 
+	float: right;
+}
+
+#Articles { 
+	
+	width: 500px; 
+//	border: 1px solid red; 
+	float: Right;
+	p:first-child { font-weight: Bold;};
+}
 
 #My-Github-Projects-Title {
 	position: absolute;
@@ -53,7 +68,7 @@ $on-laptop:        800px;
 	
 	width: 500px; 
 //	border: 1px solid red; 
-	float: right;
+	float: Left;
 	p:first-child { font-weight: Bold;};
 }
 
