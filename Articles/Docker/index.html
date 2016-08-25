@@ -8,7 +8,15 @@ layout: default
   
 </div>
 
-<div id="my-github-projects"/>
-  
+<h4>Configuration</h4>
 
-</div>
+<p>The Docker configuration file is how you setup Docker in a Windows environment.
+Location: C:\ProgramData\Docker\Config\Daemon.json</p>
+   
+<h4>Docker Registry</h4>
+
+<p>Location where your containers are stored for sharing.  Usually Docker Hub but can be installed on your local system or a server</p> 
+
+<h4>Saving Docker Images and Containers</h4>    
+
+<p>Docker images and containers end up being stored in the Local Docker Registry.  To save the container or image to the local hard drive so it can be shared with others use Docker save with Images and Docker Export with a paused or stopped Container.  <a href = http://tuhrig.de/difference-between-save-and-export-in-docker/>This</a> doc goes into better detail.</p>
