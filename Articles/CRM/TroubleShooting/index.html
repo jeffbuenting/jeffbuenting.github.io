@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">TroubleShooting MicroSoft CRM</h1>
+  
+</div>
+
+<h2>Installation Errors</h2>
+
+<p>• Error :</p>
+
+<p>     - Resolution :
+		the installation account needs to be specified during the execution of the setup file.  For powershell the -Credential parameter should be included.</p>
+		
+{% highlight ruby %}
+start-Process -FilePath "E:\Server\amd64\SetupServer.exe" -ArgumentList "/Q  /Config c:\temp\Server.xml /L c:\temp\CRMInstall.Log" -Credential $Using:CRMAdmin -wait
+{% endhighlight %}
+
+<h4>Log Files</h4>
+
+<p>During install CRM creates several log files usefull for troubleshooting. Follow this <a href = https://technet.microsoft.com/en-us/library/hh699696.aspx/>link</a> for more information.
+
+
+•Crmserversetup.log. The file that contains most of the Microsoft Dynamics CRM Server installation or upgrade activity. 
+
+•Crmsetup.log. The file that contains Setup update (self-healing Setup) activity. 
+
+•LegacyFeatureCheck.xml. During Microsoft Dynamics CRM Server upgrade, Setup analyzes the deployment for outdated (legacy) customization and extensibility features, such as Microsoft Dynamics CRM 4.0 plug-ins or solutions that use the 2007 web services endpoint. This file contains the results.
+
+•SrsDataConnectorSetup.log. The file that contains most of the Microsoft Dynamics CRM Reporting Extensions installation activity.
+
+</p>
+   
