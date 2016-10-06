@@ -20,3 +20,40 @@ Location: C:\ProgramData\Docker\Config\Daemon.json</p>
 <h4>Saving Docker Images and Containers</h4>    
 
 <p>Docker images and containers end up being stored in the Local Docker Registry.  To save the container or image to the local hard drive so it can be shared with others use Docker save with Images and Docker Export with a paused or stopped Container.  <a href = http://tuhrig.de/difference-between-save-and-export-in-docker/>This</a> doc goes into better detail.</p>
+
+
+
+
+<h4>Creating Docker Containers</h4>
+
+<p>Walkthrus for creating various types of containers</p>
+
+<h5>SQL 2014 Container</h5>
+
+</a href = https://flynnbundy.com/2016/02/20/installing-sql-server-2016-in-a-windows-container/></a>
+
+<ul style="list-style-type:disc">
+  <li>Install SQL</li>
+	Host needs .Net 3.5
+	Export Regitry setting sor 3.5
+		Store in container image build location
+	Copy SQL files to image build location
+	Create SQL Configuration.ini
+		<a href = https://msdn.microsoft.com/en-us/library/ms144259.aspx></a>
+		Store in image build location
+	Create DockerFile
+		Store in image build location
+	Build image	
+		Docker -t Build MSSQL2014dev c:\mssql
+			c:\mssql is the image build location
+	Create Container	
+		Docker run -it -v c:\datavolumes\jb-sql04\data:c:\data -v c:\datavolumes\jb-sql04\temp:c:\temp -v c:\datavolumes\jb-sql04\Logs:c:\Logs -v c:\datavolumes\jb-sql04\SQLBackup:c:\SQLBackup --name mssqlcontainer -p 1433:1433 mssql2014dev powershell
+		
+	
+	<ul style="list-style-type:circle">
+	  <li>./Setup.exe </li>
+		<ul style="list-style-type:Square">
+			<li>Setup.exe /ConfigurationFile=configurationfile.ini /IACCEPTSQLSERVERLICENSETERMS /IACCEPTROPENLICENSETERMS /SQLSVCPASSWORD="*****" /AGTSVCPASSWORD="*****" /SAPWD="Password1" /FTSVCPASSWORD="*****"</li>
+		</ul>
+	</ul> 
+</ul> 
