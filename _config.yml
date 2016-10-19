@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   This is my personal GitHub site mainly setup as a place to store my usefull powwershell snipets and scripts. But also as a way to share what I learn. Ok basically a place for me to store things I don’t want to forget. But I hear it is usefull.  Enjoy Jeff Buenting
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://jeffbuenting.github.io" 
+url: "https://jeffbuenting.github.io" 
 github_username:  jeffbuenting
 
 # Build settings
