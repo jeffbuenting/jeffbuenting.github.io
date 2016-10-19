@@ -11,7 +11,7 @@ A recent conversation reminded me why your notes are so important.  Especially w
 Without further ado, here are the steps to create a scheduled task using powershell and a script file.
 
 1. Create a Basic Task  
-![CreateBasicTask]({{ site.url }}/Images/2016-10-19-CallingPowershellScriptFromScheduledTask/Step1-CreateBasicTask.png)
+![CreateBasicTask]({{ site.url }}/Images/2016-10-19-CallingPowershellScriptFromScheduledTask/Step1-CreateBasicTask.PNG)
   
 2. Define the Trigger  
   
