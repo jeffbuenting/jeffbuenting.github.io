@@ -16,14 +16,14 @@ Without further ado, here are the steps to create a scheduled task using powersh
 2. Define the Trigger  
   
 3. For the Action select Start a Program  
-![StartAProgram]({{ site.url }}/Images/2016-10-19-CallingPowershellScriptFromScheduledTask/Step3-StartAProgram.png)  
+![StartAProgram]({{ site.url }}/Images/2016-10-19-CallingPowershellScriptFromScheduledTask/Step3-StartaProgram.PNG)  
   
 4. Here the Tricky part that I always forget
 * Program/Script should point to the full path to powershell (C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe)
 * Add Arguments should point to the Powershell Script file and look like this:
   * -File c:\scripts\Delete-TempFiles.ps1  
   * Any other powershell arguments can be added here as well  
-![Programandarguments]({{ site.url }}/Images/2016-10-19-CallingPowershellScriptFromScheduledTask/Step4-Programandarguments.png)  
+![Programandarguments]({{ site.url }}/Images/2016-10-19-CallingPowershellScriptFromScheduledTask/Step4-ProgramAndArguments.PNG)  
 
 And that is it.
 
