@@ -31,7 +31,7 @@ Here are the procedures to pull from a DSC Server
 
 ### External Resources ###
 - Partial Configuration discussions
-*   https://powershell.org/forums/topic/multiple-configurationnames/
+  * <https://powershell.org/forums/topic/multiple-configurationnames/>
 *   https://blog.wouterspaans.nl/2015/07/20/what-lego-has-to-do-with-powershell-dsc-partial-configurations/
 *   https://automationnext.wordpress.com/2016/04/19/powershell-desired-state-configuration-partial-configurations-without-configurationid/
 
