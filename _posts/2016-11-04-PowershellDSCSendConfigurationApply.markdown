@@ -31,17 +31,16 @@ Here are the procedures to pull from a DSC Server
 
 ### External Resources ###
 - Partial Configuration discussions
-*   https://powershell.org/forums/topic/multiple-configurationnames/
-*   https://blog.wouterspaans.nl/2015/07/20/what-lego-has-to-do-with-powershell-dsc-partial-configurations/
-*   https://automationnext.wordpress.com/2016/04/19/powershell-desired-state-configuration-partial-configurations-without-configurationid/
+  * <https://powershell.org/forums/topic/multiple-configurationnames/>
+  * <https://blog.wouterspaans.nl/2015/07/20/what-lego-has-to-do-with-powershell-dsc-partial-configurations/>
+  * <https://automationnext.wordpress.com/2016/04/19/powershell-desired-state-configuration-partial-configurations-without-configurationid/>
 
 - Powershell DSC Logs
-*   https://blogs.msdn.microsoft.com/powershell/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration/
-*   https://www.penflip.com/powershellorg/the-dsc-book/blob/master/trouble-shooting-dsc-and-configurations.txt
-*   
+  * <https://blogs.msdn.microsoft.com/powershell/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration/>
+  * <https://www.penflip.com/powershellorg/the-dsc-book/blob/master/trouble-shooting-dsc-and-configurations.txt>
 
 - Flush Mof files
-*   http://stackoverflow.com/questions/25877068/how-do-i-resolve-cannot-invoke-the-sendconfigurationapply-method-when-perform
+  * <http://stackoverflow.com/questions/25877068/how-do-i-resolve-cannot-invoke-the-sendconfigurationapply-method-when-perform>
 
 
 Enjoy
