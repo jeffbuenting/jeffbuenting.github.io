@@ -54,7 +54,8 @@ Since I couldn't find a built in cmdlet to remove updates from a Software Update
 
 Passing in the update or updates and the name of a software update group or groups to remove the update from.  It will default to all groups if no groups are provided.  Looping thru the groups it removes the update from the list members in each group.
 
-{$ highlight ruby %}
+{$ highlight ruby %}  
+
 function Remove-SCCMSoftwareUpdateFromGroup {
 
 <#
@@ -135,9 +136,10 @@ function Remove-SCCMSoftwareUpdateFromGroup {
             Write-Verbose "Saving Updated SoftwareUpdate : $($G.LocalizedDisplayName)"
             
             $G.Put()
-        }
-    }
-}
+        }  
+    }  
+}  
+
 (% endhighlight %}
 
 ### Remove-SCCMSoftwareUpdateFromDeploymentPackage ###
@@ -150,7 +152,8 @@ Again passing in the software update or updates and deployment package to remove
 
 At the end after all update have been removed, the deploymnet package is refreshed on the deployment point, thus removing the files and freeing up space.
 
-{% highlight ruby %}
+{% highlight ruby %}  
+
 function Remove-SCCMSoftwareUpdateFromDeploymentPackage {
 
 <#
