@@ -11,7 +11,7 @@ We have recently deployed microservices to take the place of an all encompassing
 Thanks to this article we were able to get it working.    
 (https://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html)
 
-[](http://huskermax.com)
+[Huskers](http://huskermax.com)
 
 ## Summary ##
 
