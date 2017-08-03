@@ -12,6 +12,7 @@ Thanks to this article we were able to get it working.
 (https://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html)
 
 [Huskers](http://huskermax.com)
+[I'm an inline-style link](https://www.google.com)
 
 ## Summary ##
 
