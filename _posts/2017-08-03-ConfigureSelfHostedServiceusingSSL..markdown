@@ -8,7 +8,9 @@ categories: SSL,Service,API
 
 We have recently deployed microservices to take the place of an all encompassing web app.  One of these Microservices actually responds to HTTP requests.  Of coure we need this to be secure.  But how do you bind an SSL Cert to a Windows service?
 
-Thanks to this article we were able to get it working.  [https://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html>]
+Thanks to this article we were able to get it working.    
+[https://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html](https://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html)
+
 
 ## Summary ##
 
