@@ -1,98 +1,36 @@
 ---
 layout: post
-title:  "Change TCPIP DNS settings via Powershell"
-date:   2017-08-22 11:57:00 -0400
-categories: Powershell DNS
+title:  "Configure Self hosted WebApi in Windows Service to Use SSL"
+date:   2017-08-03 10:57:00 -0400
+categories: SSL,Service,API
 ---
-# Change TCPIP DNS settings via Powershell #
+# Configure Self hosted WebApi in Windows Service to Use SSL #
 
-We are upgrading AD to Windows 2016.  New Domain Controllers on new Servers.  Once all server roles have been migrated from the old to the new servers, the old ones can be decommisioned.  Since we are using new servers with new IPs we need to change the DNS servers that the clients reference.  Easy to do with DHCP, but static assigned IPs require a bit more work.  To prevent having to log onto each server to make the change, this powershell script can be used to add the new DNS server IPs to the list of DNS servers in the TCPIP Config.
+We have recently deployed microservices to take the place of an all encompassing web app.  One of these Microservices actually responds to HTTP requests.  Of coure we need this to be secure.  But how do you bind an SSL Cert to a Windows service?
 
+Thanks to this article we were able to get it working.    
+[https://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html](https://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html)
+
+
+## Summary ##
+
+Use the following command to register the SSL with port.
 
 {% highlight ruby %} 
-$Servers = Get-ADComputer -Filter * | Select-Object -ExpandProperty Name 
-
-$FailedServers = @()
-$CantConnect = @()
-
-foreach ( $S in $Servers ) {
-    Write-Output "--------"
-    Write-Output "Updating $S"
-
-    # ----- Check if Server is online.  skip if not reachable.
-    if ( -Not (Test-Connection -ComputerName $S -Quiet -Count 1) ) { 
-        $CantConnect += $S
-        Continue
-    }
-
-    Try {
-        $Session = New-CimSession -ComputerName $S -ErrorAction Stop
-    
-        $Adapter = Get-NetAdapter -CimSession $Session -ErrorAction Stop
-
-
-        Foreach ($A in $Adapter ) {
-            
-
-            if ( $A | Get-NetIPAddress -ErrorAction Stop | where DHCP -ne Enabled ) {
-                Write-Output "Found : $($A.Name)"
-
-                $DNS = $A | Get-DNSClientServerAddress -AddressFamily IPv4 -ErrorAction Stop | Select-Object -ExpandProperty ServerAddresses
-
-                Write-Output "Existing DNS Hosts : $DNS "
-
-                if ( $DNS -notcontains '192.168.1.43' ) {
-                    $DNS += '192.168.1.43'
-
-                    $A | Get-NetIPConfiguration -ErrorAction Stop
-
-                    $A | Set-DNSClientServerAddress -ServerAddresses $DNS
-                }
-            }
-        }
-    }
-    Catch [Microsoft.Management.Infrastructure.CimException] {
-        # ----- Because we are running old Powershell versions the above cmdlets don't work
-        Write-Warning "Trying WMI on $S"
-        $Net = Get-WmiObject -Class WIN32_NetworkAdapterConfiguration -ComputerName $S | Where { $_.DHCPEnabled -eq $False -and $_.IPAddress -ne $Null }
-        $DNS = $Net.DNSServerSearchOrder
-        $DNS += '192.168.1.43'
-        $Net.SetDNSServerSearchOrder($DNS)
-    }
-    Catch [System.Management.Automation.PSArgumentException] {
-        # ----- Because we are running old Powershell versions the above cmdlets don't work
-        Write-Warning "Trying WMI on $S"
-        try {
-            $Net = Get-WmiObject -Class WIN32_NetworkAdapterConfiguration -ComputerName $S -erroraction Stop | Where { $_.DHCPEnabled -eq $False -and $_.IPAddress -ne $Null }
-            $DNS = $Net.DNSServerSearchOrder
-            $DNS += '192.168.1.43'
-            $Net.SetDNSServerSearchOrder($DNS)
-        }
-        Catch {
-            $EXceptionMessage = $_.Exception.Message
-            $ExceptionType = $_.exception.GetType().fullname
-            Write-Warning "$S ----- WMI ERROR.`n`n     $ExceptionMessage`n`n     Exception : $ExceptionType"
-            $FailedServers +=$S
-        }
-    }
-    Catch {
-        $EXceptionMessage = $_.Exception.Message
-        $ExceptionType = $_.exception.GetType().fullname
-        Throw "ERROR.`n`n     $ExceptionMessage`n`n     Exception : $ExceptionType"
-        
-        Write-Warning "$S --- Failed to update"
-
-        $FailedServers +=$S
-    }
-}
-
-Write-Output "These Servers failed: "
-$FailedServers
-
-Write-Output "These Servers Cannot be Contacted: "
-$CantConnect
+netsh http add sslcert ipport=0.0.0.0:8099 appid={214124cd-d05b-4309-9af9-9caa44b2b74a} certhash=‎c262318f5f1356f7f04961146efd1be743c0e9c0
 {% endhighlight %}
 
-I had to add the WMI section because some of our servers are running older versions of the OS that do not have the necesarry classes that the native PowerShell cmdlets use.
+PS: The appId is application identifier to refer to http and should remain same. Also, the ipport=0.0.0.0:8099 mean, listen on all IPs on 8099 port number.
 
-Note: This script can be used to remove DNS IPs with some modification.
+The same can be verified using following command:
+
+{% highlight ruby %} 
+netsh http show sslcert
+{% endhighlight %}
+
+The same can also be deleted using following command.
+{% highlight ruby %} 
+netsh http delete sslcert ipport=0.0.0.0:8099
+{% endhighlight %}
+
+Save this and restart the windows service
