@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SCCM Application Script Detection Method"
-date:   2017-08-20 11:46:00 -0400
+date:   2017-09-20 11:46:00 -0400
 categories: Powershell SCCM
 ---
 # SCCM Application Script Detection Method #
