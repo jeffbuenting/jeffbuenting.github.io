@@ -10,4 +10,24 @@ layout: default
 
 <h3>Docker</h3>
 
-Windows 2016 Containers requires Docker as its management piece.    I see this as both good and bad.  Docker has been at the front of the container revolution since 2008.  But windows is now relying on a third party to manage.  (But as this is an Open Source move it may not be as much of a con )
+<a href="\Articles\Docker\index.html">Docker Notes</a>
+
+
+<h3>Kubernetes</h3>
+
+Overview
+
+I followed <a href = 'https://sharepointforum.org/threads/setting-up-kubernetes-on-windows10-laptop-with-minikube.90677/'>this</a> walkthru to setup Kubernetes on my Windows 10 server.
+
+	1. Download MiniKube
+		- Why?
+		
+	2. Download Kubectl.exe
+		- MiniKube uses.
+		- Why?
+		
+	3. Start the MiniKube and allow it to create a VM for you
+		- Defaults to Virtualbox  will need to specify Hyperv
+		- minikube start --vm-driver 'hyperv' --v=7 --alsologtostderr
+
+	4. 
