@@ -3,66 +3,49 @@ layout: default
 ---
 
 <div class="home">
-
-  <h1 class="page-heading">Docker</h1>
-  
+<h1 class="page-heading">Docker</h1>
 </div>
-
-<h4>Setting up Docker</h4>
-
+<h3>Setting up Docker</h3>
 <h5>On Windows 10</h5>
-	prereqs
-		- HyperV
-		- Containers
-
-	<a href='https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10'>Docker on Windows 10 install</a>
-
-<h4>Configuration</h4>
-
-<p>The Docker configuration file is how you setup Docker in a Windows environment.
-Location: C:\ProgramData\Docker\Config\Daemon.json</p>
-   
+<p>prereqs - HyperV - Containers <a href="https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10">Docker on Windows 10 install</a></p>
+<h3>Configuration</h3>
+<p>The Docker configuration file is how you setup Docker in a Windows environment. Location: C:\ProgramData\Docker\Config\Daemon.json</p>
+<h3>Images</h3>
+<p>Images are container templates.&nbsp; OS and app.&nbsp; they can be used to build the running container. They are layered upon each other.</p>
+<p><code>Docker Images</code> to list images in your private repo.</p>
+<p>Docker images and containers end up being stored in the Local Docker Registry. To save the container or image to the local hard drive so it can be shared with others use Docker save with Images and Docker Export with a paused or stopped Container. <a href="http://tuhrig.de/difference-between-save-and-export-in-docker/">This</a> doc goes into better detail.</p>
+<p>Images are built ontop of a base image.&nbsp; This base image can either be a black OS image or an image that already has required applications installed (layered).&nbsp; These images can either be created in-house or downloaded from and online repository such as&nbsp;<a href="https://hub.docker.com/">Docker Hub</a>&nbsp;or the new <a href="https://store.docker.com/">Docker Store</a>.</p>
+<p>Images can be downloaded with the follwoing</p>
+<p><code>Docker Pull &lt;name&gt;</code></p>
+<h4>Building Images</h4>
+<p style="padding-left: 30px;"><strong>Dockerfile</strong></p>
+<p style="padding-left: 30px;">File that contains the commansds used to build an image.&nbsp; These are the same commands that you would use from the command line.&nbsp;&nbsp;</p>
+<h3>Container</h3>
+<p>A container is a running instance of an image.</p>
 <h4>Docker Registry</h4>
-
-<p>Location where your containers are stored for sharing.  Usually Docker Hub but can be installed on your local system or a server</p> 
-
-<h4>Saving Docker Images and Containers</h4>    
-
-<p>Docker images and containers end up being stored in the Local Docker Registry.  To save the container or image to the local hard drive so it can be shared with others use Docker save with Images and Docker Export with a paused or stopped Container.  <a href = http://tuhrig.de/difference-between-save-and-export-in-docker/>This</a> doc goes into better detail.</p>
-
-
-
-
+<p>Location where your containers are stored for sharing. Usually Docker Hub but can be installed on your local system or a server</p>
+<h4>&nbsp;</h4>
+<h4>&nbsp;</h4>
+<h4>&nbsp;</h4>
 <h4>Creating Docker Containers</h4>
-
 <p>Walkthrus for creating various types of containers</p>
-
+<h5>&nbsp;</h5>
+<h5>&nbsp;</h5>
+<h5>&nbsp;</h5>
+<h5>&nbsp;</h5>
+<h5>&nbsp;</h5>
+<h5>&nbsp;</h5>
+<h5>&nbsp;</h5>
+<h5>&nbsp;</h5>
 <h5>SQL 2014 Container</h5>
-
-</a href = https://flynnbundy.com/2016/02/20/installing-sql-server-2016-in-a-windows-container/></a>
-
-<ul style="list-style-type:disc">
-  <li>Install SQL</li>
-	Host needs .Net 3.5
-	Export Regitry setting sor 3.5
-		Store in container image build location
-	Copy SQL files to image build location
-	Create SQL Configuration.ini
-		<a href = https://msdn.microsoft.com/en-us/library/ms144259.aspx></a>
-		Store in image build location
-	Create DockerFile
-		Store in image build location
-	Build image	
-		Docker -t Build MSSQL2014dev c:\mssql
-			c:\mssql is the image build location
-	Create Container	
-		Docker run -it -v c:\datavolumes\jb-sql04\data:c:\data -v c:\datavolumes\jb-sql04\temp:c:\temp -v c:\datavolumes\jb-sql04\Logs:c:\Logs -v c:\datavolumes\jb-sql04\SQLBackup:c:\SQLBackup --name mssqlcontainer -p 1433:1433 mssql2014dev powershell
-		
-	
-	<ul style="list-style-type:circle">
-	  <li>./Setup.exe </li>
-		<ul style="list-style-type:Square">
-			<li>Setup.exe /ConfigurationFile=configurationfile.ini /IACCEPTSQLSERVERLICENSETERMS /IACCEPTROPENLICENSETERMS /SQLSVCPASSWORD="*****" /AGTSVCPASSWORD="*****" /SAPWD="Password1" /FTSVCPASSWORD="*****"</li>
-		</ul>
-	</ul> 
-</ul> 
+<p>&lt;/a href = https://flynnbundy.com/2016/02/20/installing-sql-server-2016-in-a-windows-container/&gt;</p>
+<ul style="list-style-type: disc;">
+<li>Install SQL</li>
+Host needs .Net 3.5 Export Regitry setting sor 3.5 Store in container image build location Copy SQL files to image build location Create SQL Configuration.ini Store in image build location Create DockerFile Store in image build location Build image Docker -t Build MSSQL2014dev c:\mssql c:\mssql is the image build location Create Container Docker run -it -v c:\datavolumes\jb-sql04\data:c:\data -v c:\datavolumes\jb-sql04\temp:c:\temp -v c:\datavolumes\jb-sql04\Logs:c:\Logs -v c:\datavolumes\jb-sql04\SQLBackup:c:\SQLBackup --name mssqlcontainer -p 1433:1433 mssql2014dev powershell
+<ul style="list-style-type: circle;">
+<li>./Setup.exe</li>
+<ul style="list-style-type: Square;">
+<li>Setup.exe /ConfigurationFile=configurationfile.ini /IACCEPTSQLSERVERLICENSETERMS /IACCEPTROPENLICENSETERMS /SQLSVCPASSWORD="*****" /AGTSVCPASSWORD="*****" /SAPWD="Password1" /FTSVCPASSWORD="*****"</li>
+</ul>
+</ul>
+</ul>
