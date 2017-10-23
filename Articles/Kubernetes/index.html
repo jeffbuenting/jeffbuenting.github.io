@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="home">
+<h1>Kubernetes Container Orchestration</h1>
+<p>&nbsp;</p>
+<p><a href="https://kubernetes.io/">Kubernets Site</a></p>
+<p><a href="https://kubernetes.io/docs/home/">Kubernets Documentation</a></p>
+<h3><strong>Overview</strong></h3>
+<h3><strong>Setup</strong></h3>
+<p>Note : I am running Kubernets on my Windows 10 desktop utilizing Minikube.&nbsp; Most of the command seen here will either work for both or be specific to MiniKube.&nbsp; I will add production commands as I either run across them or learn them.</p>
+<p>I followed <a href="https://sharepointforum.org/threads/setting-up-kubernetes-on-windows10-laptop-with-minikube.90677/">this</a> walkthru to setup Kubernetes on my Windows 10 server.</p>
+<ol>
+<li>Download MiniKube - Why?</li>
+<li>Download Kubectl.exe - MiniKube uses. - Why?</li>
+<li>Start the MiniKube and allow it to create a VM for you - Defaults to Virtualbox will need to specify Hyperv - minikube start --vm-driver 'hyperv' --v=7 --alsologtostderr</li>
+<li>Configuration Settings are in users profile under .MiniKube</li>
+</ol>
+<h3>Dashboard</h3>
+<p><a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/">Kubernetes Dashboards</a></p>
+<p>The dashboard is an overview of applications running on your Kubernetes cluster.&nbsp; You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster itself along with its attendant resources</p>
+<p>Enter the following to open the dashboard</p>
+<p><code>MiniKube Dashboard</code></p>
+<h3>Troubleshooting</h3>
+<p><strong>Error : You must be logged in to the server (the server has asked for the client to provide credentials)</strong></p>
+<p>Kubectl needs to be connected to the correct Kubernetes cluster.&nbsp; This is done via a config file that sets the correct context for the cluster.&nbsp; If this is not set correctly you can get the above error.&nbsp; Behind the scenes in your %HOMEPATH%\.kube directory, there is a config file that contains information about your Kubernetes cluster and the details for connecting to your various clusters is present over there.</p>
+<p>To set the context</p>
+<p><code>kubectl config use-context minikube</code></p>
+<p>&nbsp;</p>
+</div>
