@@ -20,6 +20,7 @@ layout: default
 <h4>Building Images</h4>
 <p style="padding-left: 30px;"><strong>Dockerfile</strong></p>
 <p style="padding-left: 30px;">File that contains the commansds used to build an image.&nbsp; These are the same commands that you would use from the command line.&nbsp;&nbsp;</p>
+<p style="padding-left: 30px;"><a href="https://docs.docker.com/engine/reference/builder/">DockerFile Reference</a></p>
 <h3>Container</h3>
 <p>A container is a running instance of an image.</p>
 <h4>Docker Registry</h4>
@@ -29,7 +30,14 @@ layout: default
 <h4>&nbsp;</h4>
 <h4>Creating Docker Containers</h4>
 <p>Walkthrus for creating various types of containers</p>
-<h5>&nbsp;</h5>
+<h5>&nbsp;Node JS</h5>
+<p style="padding-left: 30px;">JavaScript Runtime&nbsp;<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+<p style="padding-left: 30px;">&nbsp; &nbsp; &nbsp;- Download the latest msi from the above link</p>
+<p style="padding-left: 30px;">DockerFile</p>
+<p style="padding-left: 60px;"><code>FROM microsoft/windowsservercore</code></p>
+<p style="padding-left: 60px;">COPY node-v6.11.4-x64.msi c:/temp</p>
+<p style="padding-left: 60px;"># RUN msiexec.exe /q /i c:\temp\node-v6.11.4-x64.msi</p>
+<p style="padding-left: 30px;">run the container.</p>
 <h5>&nbsp;</h5>
 <h5>&nbsp;</h5>
 <h5>&nbsp;</h5>
