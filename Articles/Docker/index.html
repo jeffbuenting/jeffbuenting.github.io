@@ -32,7 +32,7 @@ layout: default
 <h3>Configuration</h3>
 <p>The Docker configuration file is how you setup Docker in a Windows environment. Location: C:\ProgramData\Docker\Config\Daemon.json</p>
 <h3>Images</h3>
-<p>Images are container templates.&nbsp; OS and app.&nbsp; they can be used to build the running container. They are layered upon each other.</p>
+<p>Images are container templates.&nbsp; OS and app.&nbsp; they can be used to build the running container. They are layered upon each other.&nbsp; It is a single, self contained, file that represents your application.</p>
 <p><code>Docker Images</code> to list images in your private repo.</p>
 <p>Docker images and containers end up being stored in the Local Docker Registry. To save the container or image to the local hard drive so it can be shared with others use Docker save with Images and Docker Export with a paused or stopped Container. <a href="http://tuhrig.de/difference-between-save-and-export-in-docker/">This</a> doc goes into better detail.</p>
 <p>Images are built ontop of a base image.&nbsp; This base image can either be a black OS image or an image that already has required applications installed (layered).&nbsp; These images can either be created in-house or downloaded from and online repository such as&nbsp;<a href="https://hub.docker.com/">Docker Hub</a>&nbsp;or the new <a href="https://store.docker.com/">Docker Store</a>.</p>
@@ -62,7 +62,10 @@ layout: default
 <p>To attach to a network, in my case I usually attache to my Hyper-V external network so the container is accessable from external sources, use the <code>docker run --network &lt;Network&gt;</code></p>
 <p>&nbsp;</p>
 <h4>&nbsp;</h4>
-<p>To Research : Docker Swarm TO Research : Patching To Research : Updating app / Service</p>
+<h3>Docker Swarm&nbsp;&nbsp;</h3>
+<p>collection of Docker hosts that have been joined together in a cluster.</p>
+<p><span style="background-color: #ffff00;">TO Research : Patching </span></p>
+<p><span style="background-color: #ffff00;">To Research : Updating app / Service</span></p>
 <h4>&nbsp;</h4>
 <h4>Creating Docker Containers</h4>
 <p>Walkthrus for creating various types of containers</p>
