@@ -25,8 +25,23 @@ layout: default
 <p>A container is a running instance of an image.</p>
 <h4>Docker Registry</h4>
 <p>Location where your containers are stored for sharing. Usually Docker Hub but can be installed on your local system or a server</p>
+<h3>DockerHub</h3>
+<p>Location images can be stored online.&nbsp;&nbsp;</p>
+<h4 style="padding-left: 30px;">Autobuild</h4>
+<p style="padding-left: 30px;">Dockerhub can be linked to Github or Bitbucket and triger image builds when the linked repo is updated.&nbsp; I am currently having problems doing this with a windows container so autobuild may not work with windows containers.</p>
+<p style="padding-left: 30px;">Neverfear.&nbsp; Found a way to do it with Team City.&nbsp;&nbsp;<a href="https://lostechies.com/gabrielschenker/2016/03/22/ci-with-teamcity-and-docker/">https://lostechies.com/gabrielschenker/2016/03/22/ci-with-teamcity-and-docker/</a></p>
+<p style="padding-left: 30px;">&nbsp;</p>
+<h4>Networking</h4>
+<p>Installing docker on windows creates several new networks.&nbsp; According to <a href="https://docs.docker.com/engine/userguide/networking/">Docker Container Networking</a>, it creates three.&nbsp; On my Windows 10 environment, I have all three but the Bridged network is named Default Switch.</p>
+<p style="padding-left: 30px;"><strong>nat</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p style="padding-left: 30px;"><strong>bridge (Default Switch)</strong> - This is the default network a container will connect.&nbsp; The also gets connected to this network.&nbsp; It essentially is the local private network between the host and its containers.</p>
+<p style="padding-left: 30px;"><strong>None</strong> - The container will not be connected to any network.</p>
+<p>Since Docker runs on top of Hyper-V, if you have any Hyper-V virtual switches, those will show up as well.</p>
+<p>You can use the <code>docker network ls</code> to show&nbsp;the networks configured on your machine.</p>
+<p>To attach to a network, in my case I usually attache to my Hyper-V external network so the container is accessable from external sources, use the <code>docker run --network &lt;Network&gt;</code></p>
+<p>&nbsp;</p>
 <h4>&nbsp;</h4>
-<h4>&nbsp;</h4>
+<p>To Research : Docker Swarm TO Research : Patching To Research : Updating app / Service</p>
 <h4>&nbsp;</h4>
 <h4>Creating Docker Containers</h4>
 <p>Walkthrus for creating various types of containers</p>
