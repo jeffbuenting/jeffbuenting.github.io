@@ -1,109 +1,26 @@
----
-layout: default
----
-
+<p>--- layout: default ---</p>
 <div class="home">
-
-  <h1 class="page-heading">Powershell for GIT</h1>
-  
+<h1 class="page-heading">Powershell for GIT</h1>
 </div>
-
 <h3>OverView</h3>
-<p><a href=https://github.com/PowerShell/Whitepapers/blob/master/PullServerCPIG/PullServerCPIG.md>Powershell DSC Overview on Github</a></p>
-
-
-<h3>Pull Server</h3>
-
-<h4>Pull Server HTTPS Setup</h4>
-<p><a href=https://www.starwindsoftware.com/blog/how-to-build-a-secure-powershell-dsc-pull-server>More Info at this page.</a></p>
-  
+<p>Allows the use of PowerShell to manage GIT</p>
+<h3>Configuring</h3>
 <ul>
-	<li>Pre-Requisites that need to be installed</li>
-		<ul>
-		  <li>Powershell / WMF 5.0</li> 
-		  <li>IIS Server Role   </li>
-			<ul>
-				<li>This will be installed with the DSC Service as a prerequisite. </li>
-			</ul>
-			
-		  <li>  DSC Service   </li>
-			<ul>
-				<li><code>Add-WebFeature DSC-Service</code> this should also install the required IIS roles. </li>  
-				<li>Like the IIS Roles this can be configured with the DSC Script to create the pull server  </li> 
-			</ul>
-			
-		  <li>You will also need an Certificate so the web server will run with SSL   </li>
-	  </ul>
-  
-	<li><code>Install-Module xPSDisiredConfiguration,xWebAdministration</Code>   </li>
-		<ul>
-			<li>These will be used to configure the DSC Pull Server   </li>
-			<li>Powershell v5.0 includes this cmdlet that can directly download and install powershell modules from an nonline gallery. https://technet.microsoft.com/en-us/library/dn807162.aspx  </li> 
-			<li>https://github.com/PowerShell/xPSDesiredStateConfiguration  </li>
-		</ul>
-		
-	<li>Edit for your environment and run the following script</li> 
-</ul> 
-{% highlight ruby %} 
-
-configuration Sample_xDscWebServiceRegistration
-{
-    param 
-    (
-        [string[]]$NodeName = 'localhost',
-
-        [ValidateNotNullOrEmpty()]
-        [string] $certificateThumbPrint,
-
-        [Parameter(HelpMessage='This should be a string with enough entropy (randomness) to protect the registration of clients to the pull server.  We will use new GUID by default.')]
-        [ValidateNotNullOrEmpty()]
-        [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
-    )
-
-    Import-DSCResource -ModuleName xPSDesiredStateConfiguration
-
-    Node $NodeName
-    {
-        WindowsFeature DSCServiceFeature
-        {
-            Ensure = "Present"
-            Name   = "DSC-Service"            
-        }
-
-        xDscWebService PSDSCPullServer
-        {
-            Ensure                  = "Present"
-            EndpointName            = "PSDSCPullServer"
-            Port                    = 4433
-            PhysicalPath            = "$env:SystemDrive\inetpub\wwwroot\PSDSCPullServer"
-            CertificateThumbPrint   = $certificateThumbPrint
-            ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
-            ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"            
-            State                   = "Started"
-            DependsOn               = "[WindowsFeature]DSCServiceFeature" 
-            RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"   
-            AcceptSelfSignedCertificates = $true
-        }
-
-        File RegistrationKeyFile
-        {
-            Ensure          = 'Present'
-            Type            = 'File'
-            DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
-            Contents        = $RegistrationKey
-        }
-    }
-}
-
-DSCWebPullServer -RegistrationKey $RegistrationKey -certificateThumbPrint $CertThumbprint
-{% endhighlight %} 
-
-<ul>
-The Registration key is a GUID.  Run the following to get a new guid '[GUID]::NewGuid()'
-		<ul>
-			<li>Push the configuration to your DSC Pull Server</li>
-			<li><code>Start-dscConfiguration -Computername FQDN -Path .mof -verbose -wait -force</code></li>
-	</ul>
+<li>Install and configure GIT for WIndow</li>
 </ul>
-
-<h4>Configuration</h4>
+<p style="padding-left: 30px;"><code>
+git config --global user.name 'your name'  
+</code></p>
+<p style="padding-left: 30px;"><code>git config --global user.email 'your email address'
+</code></p>
+<p style="padding-left: 30px;"><code>git config --global push.default simple
+</code></p>
+<ul>
+<li>Install the Posh-Git Powershell module from the powershell Gallery</li>
+</ul>
+<p style="padding-left: 30px;"><code>Install-Module <span class="crayon-cn">-Name</span> <span class="crayon-i">posh</span><span class="crayon-cn">-git</span> <span class="crayon-cn">-Force</span></code></p>
+<p style="padding-left: 30px;"><code></code></p>
+<h3>Additional Resources</h3>
+<h3><a href="http://mikefrobbins.com/2016/02/09/configuring-the-powershell-ise-for-use-with-git-and-github/">Configuring the Powershell ISE for use with GIT and GitHub</a></h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
