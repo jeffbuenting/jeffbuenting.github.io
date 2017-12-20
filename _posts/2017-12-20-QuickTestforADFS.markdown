@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Quick test to make sure ADFS is Working"
-date:   2016-06-14 10:38:00 -0400
+date:   2017-12-20 10:00:00 -0400
 categories: ADFS Powershll
 ---
 # Quick test to make sure ADFS is Working #
