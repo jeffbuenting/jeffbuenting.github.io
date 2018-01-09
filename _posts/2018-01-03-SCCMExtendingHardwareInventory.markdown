@@ -2,7 +2,7 @@
 layout: post
 title:  "Extending SCCM Hardware Inventory"
 date:   2018-01-03 10:21:00 -0400
-categories: ADFS Powershll
+categories: SCCM
 ---
 # Extending SCCM Hardware Inventory #
 
