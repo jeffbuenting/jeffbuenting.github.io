@@ -34,8 +34,10 @@ $on-laptop:        800px;
 
 #leftcolumn { 
 	width: 300px; 
+	height: 700px;
 //	border: 1px solid red; 
 	float: left
+	overflow-y: scroll;
 };
 
 // working to get new title to div via css
