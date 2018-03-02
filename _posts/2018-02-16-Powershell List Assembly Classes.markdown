@@ -2,7 +2,7 @@
 layout: post
 title:  "PowerShell List Classes in an Assembly"
 date:   2018-02-16 14:20:00 -0400
-categories: SCCM
+categories: [PowerShell SCCM]
 ---
 # PowerShell List Classes in an Assembly #
 
