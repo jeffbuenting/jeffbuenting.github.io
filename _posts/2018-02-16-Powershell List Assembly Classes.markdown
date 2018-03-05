@@ -2,9 +2,8 @@
 layout: post
 title:  "PowerShell List Classes in an Assembly"
 date:   2018-02-16 14:20:00 -0400
-categories: SCCM
+categories: Powershell
 ---
-# PowerShell List Classes in an Assembly #
 
 Ever wonder how to find out what assemblies and classes are available to you in powershell?  
 

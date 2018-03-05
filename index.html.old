@@ -10,9 +10,6 @@ layout: default
 
 <div id="leftcolumn-Title"/>
 	<h1>Blog Posts</h1>
-
-
-
 </div>
 
 <div id="leftcolumn"/>
@@ -31,7 +28,6 @@ layout: default
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
-
 
 <div id="Articles-Title">
 	
