@@ -16,10 +16,8 @@ layout: default
   {% endif %}
   <p>
 	  {% for category in categories %}
-	  <!-- Having problems with html anchor hash tags on Github pages.  So just linking all categories to beginning of page until I get this figured out
-	  <a href="{{site.baseurl}}/category/category.html#{{category|slugize}}">{{category}}</a>
-	  -->
-	  <a href="{{site.baseurl}}/category/category.html">{{category}}</a>
+	  <a href="{{site.baseurl}}/Category/category.html#{{category|slugize}}">{{category}}</a>
+
 	  {% unless forloop.last %}&nbsp;{% endunless %}
 	  {% endfor %}
   </p>
