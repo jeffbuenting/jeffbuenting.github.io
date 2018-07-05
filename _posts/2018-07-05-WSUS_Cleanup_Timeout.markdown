@@ -8,7 +8,7 @@ categories: WSUS SQL Powershell
 
 For the past 1.5 weeks, I have been trying to resolve a timeout issue whenever I attempted to run the WSUS Cleanup wizzard.  This was happening for both the gui and the powershell script.  Apparently running the script I posted in a previous blog entry once per month is not enough.  I am going to schedule it for once per week.
 
-But like I said, it won't run until I resolve the timeout issue.  I tried several different articles until I found this one.  http://pnijjar.freeshell.org/2016/wsus-stuck/ Using the SQL script allowed me to clean up uneeded or unused updates.  Once that was done the cleanup wizard worked again.
+But like I said, it won't run until I resolve the timeout issue.  I tried several different articles until I found this one.  <http://pnijjar.freeshell.org/2016/wsus-stuck/> Using the SQL script allowed me to clean up uneeded or unused updates.  Once that was done the cleanup wizard worked again.
 
 Run this script against the SUSDB on the SQL server.
 
