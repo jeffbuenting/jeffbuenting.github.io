@@ -22,7 +22,7 @@ Nice.  And to find out what versions of TLS powershell Supports.  Use System.Net
 [enum]::GetNames([System.Net.SecurityProtocolType])
 {% endhighlight %}
 
-![TLS Versions](https://github.com/jeffbuenting/jeffbuenting.github.io/tree/master/_posts/2018-07-1-Powershell_TLS_Enum.PNG "TLS Error in PowerShell")
+![TLS Versions](/_posts/2018-07-1-Powershell_TLS_Enum.PNG "TLS Error in PowerShell")
 
 As you can see.  TLS 1.3 is not supported yet.
 
