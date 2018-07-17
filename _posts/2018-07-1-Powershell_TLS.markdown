@@ -12,15 +12,14 @@ Following best practice, we have been diabling TLS 1.0 and 1.1 from our servers.
 
 How do you force Powershell to use the newer and more secure TLS 1.2?  With some simple .Net magic.  A simple single line set your current session to use the correct TLS.
 
-{% highlight ruby %}
+```powershell
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-{% endhighlight %}
+```
 
 Nice.  And to find out what versions of TLS powershell Supports.  Use System.Net.SecurityProtocolType
-
-{% highlight ruby %}
+```powershell
 [enum]::GetNames([System.Net.SecurityProtocolType])
-{% endhighlight %}
+```
 
 ![TLS Versions](/_posts/2018-07-1-Powershell_TLS_Enum.PNG "TLS Error in PowerShell")
 
