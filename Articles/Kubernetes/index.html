@@ -17,6 +17,16 @@ layout: default
 <li>Start the MiniKube and allow it to create a VM for you - Defaults to Virtualbox will need to specify Hyperv - minikube start --vm-driver 'hyperv' --v=7 --alsologtostderr</li>
 <li>Configuration Settings are in users profile under .MiniKube</li>
 </ol>
+<p>Production Setup</p>
+<p style="padding-left: 30px;">Kubernetes needs a master installed on a Linux VM to control the nodes and containers.</p>
+<ol>
+<li style="padding-left: 60px;">Create VM with Ubuntu
+<ol>
+<li style="padding-left: 60px;">Best Practices for Linux on Hyper-v&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v">https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v</a>&nbsp;</li>
+</ol>
+</li>
+</ol>
+<p style="padding-left: 30px;">&nbsp;</p>
 <h3>Dashboard</h3>
 <p><a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/">Kubernetes Dashboards</a></p>
 <p>The dashboard is an overview of applications running on your Kubernetes cluster.&nbsp; You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster itself along with its attendant resources</p>
