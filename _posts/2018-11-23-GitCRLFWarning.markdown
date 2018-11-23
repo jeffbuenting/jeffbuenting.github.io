@@ -19,7 +19,7 @@ git config core.autocrlf
 
    False = no line-ending conversion is perfromed.
 
-   Input = see [http://kernel.org/pub/software/scm/git/docs/git-config.html] for more information.
+   Input = see <http://kernel.org/pub/software/scm/git/docs/git-config.html> for more information.
 
 
 To disable the warning but not the actual conversion, use the following:
