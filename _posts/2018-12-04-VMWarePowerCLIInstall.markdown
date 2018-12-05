@@ -6,7 +6,7 @@ categories: Powershell VMWare
 ---
 
 
-Finally got my elevated priveledges for my new job.  This allowed me to install VMWare's PowerCLI.  Man, have I been jonesing to do some vmware powershelling.  Installing has never been easier.  Follow these steps to install from the powershell gallery.  which makes it easy.  
+Finally got my elevated priveledges for my new job.  This allowed me to install VMWare's PowerCLI.  Man, have I been looking forward to doing some vmware powershelling.  Installing has never been easier.  Follow these steps to install from the powershell gallery.  which makes it easy.  
 
 ```Powershell
 install-module vmware.powercli
