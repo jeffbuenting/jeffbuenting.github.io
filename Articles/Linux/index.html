@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="home">
+<h1>Linux</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>I recently have the need to run software on a linux based OS.&nbsp; I haven't done this very often so I have to look up almost every command.</p>
+<p>&nbsp;</p>
+<p>I am using Ubuntu in this case</p>
+<p>&nbsp;</p>
+<h3><span style="text-decoration: underline;">Join to an AD Domain</span></h3>
+<p>Not a straight forward affair.&nbsp; This site is the best explaination for how to accomplish this.</p>
+<p><a href="https://bitsofwater.com/2018/05/08/join-ubuntu-18-04-to-active-directory/">https://bitsofwater.com/2018/05/08/join-ubuntu-18-04-to-active-directory/</a>&nbsp;</p>
+<p>&nbsp;</p>
+<h3><span style="text-decoration: underline;">Add domain adimins to sudo group</span></h3>
+<p>Edit the sudoers file</p>
+<ul>
+<li>vi visudo</li>
+<li>NOTE: you have to use this command to edit the sudoers file.&nbsp; when you exit the file is checked to make sure the syntax is correct</li>
+</ul>
+<p>Add this under the %sudo line</p>
+<ul>
+<li>%domain\ <a href="mailto:admins@stratuslivedemo.com">admins@stratuslivedemo.com</a>&nbsp;ALL=(ALL) ALL</li>
+</ul>
+<p>RDP to Linux machine</p>
+<p style="padding-left: 30px;"><a href="https://websiteforstudents.com/connect-to-ubuntu-16-04-17-10-18-04-desktop-via-remote-desktop-connection-rdp-with-xrdp/">https://websiteforstudents.com/connect-to-ubuntu-16-04-17-10-18-04-desktop-via-remote-desktop-connection-rdp-with-xrdp/</a>&nbsp;</p>
+<p>&nbsp;</p>
+</div>

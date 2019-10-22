@@ -17,6 +17,47 @@ layout: default
 <li>Start the MiniKube and allow it to create a VM for you - Defaults to Virtualbox will need to specify Hyperv - minikube start --vm-driver 'hyperv' --v=7 --alsologtostderr</li>
 <li>Configuration Settings are in users profile under .MiniKube</li>
 </ol>
+<p>Production Setup</p>
+<p style="padding-left: 30px;"><a href="https://kubernetes.io/docs/setup/independent/install-kubeadm/">https://kubernetes.io/docs/setup/independent/install-kubeadm/</a>&nbsp;</p>
+<p style="padding-left: 30px;">Kubernetes needs a master installed on a Linux VM to control the nodes and containers.</p>
+<ol>
+<li style="padding-left: 60px;">Create VM with Ubuntu
+<ol>
+<li style="padding-left: 60px;">Best Practices for Linux on Hyper-v&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v">https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v</a>&nbsp;</li>
+</ol>
+</li>
+<li>Install Docker</li>
+<li>Install Kubeadm, kubelet and kubectl
+<ol>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install -y apt-transport-https curl</li>
+<li>sudo curl -s <a href="https://packages.cloud.google.com/apt/doc/apt-key.gpg">https://packages.cloud.google.com/apt/doc/apt-key.gpg</a>&nbsp;| sudo apt-key add -</li>
+<li>sudo&nbsp;cat &lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list &gt; /dev/null
+<ol>
+<li>this command is different than on the web because we need to run the redirection as sudo and the &gt; operator doesn't allow that.&nbsp; So the TEE command is used.&nbsp;&nbsp;</li>
+</ol>
+</li>
+<li>deb http://apt.kubernetes.io/ kubernetes-xenial main</li>
+<li>EOF</li>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install -y kubelet kubeadm kubectl</li>
+<li>sudo apt-mark hold kubelet kubeadm kubectl</li>
+</ol>
+</li>
+<li>Initailize the master
+<ol>
+<li><a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#whats-next">https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#whats-next</a></li>
+<li>Install a Pod network Add-on
+<ol>
+<li><a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network">https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network</a>&nbsp;</li>
+<li>Good Info on choosing:&nbsp;<a href="https://chrislovecnm.com/kubernetes/cni/choosing-a-cni-provider/">https://chrislovecnm.com/kubernetes/cni/choosing-a-cni-provider/</a>&nbsp;</li>
+</ol>
+</li>
+<li></li>
+</ol>
+</li>
+</ol>
+<p style="padding-left: 30px;">&nbsp;</p>
 <h3>Dashboard</h3>
 <p><a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/">Kubernetes Dashboards</a></p>
 <p>The dashboard is an overview of applications running on your Kubernetes cluster.&nbsp; You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster itself along with its attendant resources</p>
