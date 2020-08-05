@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SQL Query to list DB Role Permissions"
-date:   2017-04-03 13:16:00 -0400
+date:   2020-08-04 13:16:00 -0400
 categories: SQL
 ---
 # SQL Query to list DB Role Permissions #
