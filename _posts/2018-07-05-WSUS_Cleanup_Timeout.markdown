@@ -32,7 +32,6 @@ END
 CLOSE WC
 DEALLOCATE WC
 DROP TABLE #results
-Download SQL Manage
 {% endhighlight %}
 
 It will take awhile and may error out.  But running it again should complete and delete the updates.
