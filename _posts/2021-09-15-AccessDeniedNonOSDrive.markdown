@@ -12,7 +12,7 @@ Restore to an old snapshot did not make a difference.  Removing and rejoining th
 
 It is important to note that even the service accounts and the system account could not access the drives.  So in our case the web sites were down and the services would not start.
 
-![AccessDeniedImage](..\Images\2021-09-15-AccessDeniedNonOSDrive/AccessDenied.jpg)
+![AccessDeniedImage](..\Images\2021-09-15-AccessDeniedNonOSDrive\AccessDenied.jpg)
 	 
 ## Resolution   
 After some research, I found that with a hot swappable SCSI drive on a VMware VM, windows considers that a removable storage device.  Think USB drive.  This article describes the problem we were having and points to a Windows Active Directory Group Policy Object: https://serverfault.com/questions/944051/suddenly-inaccessible-local-drivess-on-several-windows-server-2016-esxi-6-5.  Using this new found info, I found this article on the affects of the default VMware setting of hotplug SCSI drives and Windows Removble Storage GPOs: https://kb.vmware.com/s/article/2097525.    
